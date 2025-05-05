@@ -1,27 +1,19 @@
-constNum1 = parseFloat(prompt("Digite o primeiro número"));
-constNum2 = parseFloat(prompt("Digite o segundo número"));
+let num1 = parseFloat(prompt("Digite o primeiro número")); // Variável do primeiro número e informação para o usuário para digitar.
 
-if (!isNaN(constNum1) && !isNaN(constNum2)) {
-    let comeco;
-    let fim;
-  
-    if (constNum1 < constNum2) {
-      comeco = constNum1;
-      fim = constNum2;
-    } else {
-      comeco = constNum1;
-      fim = constNum2;
-    }
-  
-    let numPares = "";
-  
-    for (let i = comeco; i <= fim; i++) {
-      if (i % 2 === 0) {
-        numPares += i + " ";
-      }
-    }
-  
-    alert("Números pares entre o digitado: " + comeco + " e " + fim + " são : " + numPares);
-  } else {
-    alert("Você não digitou um número que seja válido para o código!");
+let num2 = parseFloat(prompt("Digite o segundo número")); // Variável do segundo número e informação para o usuário para digitar.
+
+let pares = ""; // Definição da variável dos números pares.
+
+if (num1 % 2 == 0) { // Verifica se o número é par.
+
+  for (let i = num1; i <= num2; i += 2) { // looping para os números pares.
+    pares += i;
   }
+} else {
+  num1 = num1 + 1;
+  for (let i = num1 ; i <= num2; i += 2) { // looping para os números que começarem ou terminarem com ímpar.
+    pares = pares + i;
+  }
+}
+console.log(pares)
+alert(pares) // Resposta ao usuário com os números.
